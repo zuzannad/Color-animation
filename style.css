@@ -8,43 +8,101 @@ div.bg {
     width: 100vw;
     height: 100vh;
     background-color: #777;
+    transition: 0.4s;
 }
 
-div p {
-    display: none;
+div.bg p {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    line-height: 100vh;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 3vw;
+    opacity: 0;
+    font-family: arial;
+    color: white;
+    transition: 0.4s;
 }
 
-div.red,
-div.green,
-div.blue,
-div.orange {
+div p.red {
+    background-color: red;
+}
+
+div p.green {
+    background-color: green;
+}
+
+div p.blue {
+    background-color: blue;
+}
+
+div p.orange {
+    background-color: orange;
+}
+
+.circle {
     position: absolute;
     width: 5vh;
     height: 5vh;
     border: 2px solid #fff;
     border-radius: 50%;
+    cursor: pointer;
+    z-index: 1;
 }
 
-div:first-child {
+div.red {
     top: 2vw;
     left: 2vw;
     background-color: red;
 }
 
-div:nth-child(2) {
+div.green {
     top: 2vw;
     right: 2vw;
     background-color: green;
 }
 
-div:nth-child(3) {
+div.blue {
     bottom: 2vw;
     left: 2vw;
     background-color: blue;
 }
 
-div:nth-child(4) {
+div.orange {
     bottom: 2vw;
     right: 2vw;
     background-color: orange;
+}
+
+div.red:hover~div.bg {
+    background-color: red;
+}
+
+div.red:hover~div.bg p.red {
+    opacity: 1;
+}
+
+div.green:hover~div.bg {
+    background-color: green;
+}
+
+div.green:hover~div.bg p.green {
+    opacity: 1;
+}
+
+div.blue:hover~div.bg {
+    background-color: blue;
+}
+
+div.blue:hover~div.bg p.blue {
+    opacity: 1;
+}
+
+div.orange:hover~div.bg {
+    background-color: orange;
+}
+
+div.orange:hover~div.bg p.orange {
+    opacity: 1;
 }
